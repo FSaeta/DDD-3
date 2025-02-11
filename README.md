@@ -80,10 +80,6 @@ Criar as **Entidades, Value Objects, Agregados e Repositórios** do seu projeto.
 | Endereço               | Value Object    | Se o paciente mudar de endereço, um novo objeto será criado. |
 | Consulta (Agregado)    | Aggregate Root  | Controla a relação entre Paciente, Médico e Data da Consulta. |
 
-📌 **Formato de Entrega:**  
-- O trabalho pode ser entregue em **Markdown (.md), PDF ou apresentação (PPT)**.  
-- O diagrama pode ser anexado como **imagem** ou **link para uma ferramenta online**.  
-- Entrega via **repositório Git** ou outra plataforma definida pelo professor.  
 
 📌 **Ferramentas para Criar o Diagrama:**  
 - [Miro](https://miro.com/)  
