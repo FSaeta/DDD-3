@@ -74,11 +74,17 @@ Criar as **Entidades, Value Objects, Agregados e Repositórios** do seu projeto.
 
 | **Elemento**            | **Tipo**         | **Explicação** |
 |-------------------------|-----------------|---------------|
-| Paciente               | Entidade        | Possui identidade única e pode mudar ao longo do tempo. |
-| Médico                 | Entidade        | Tem uma identidade única e pode alterar seus horários. |
-| CPF                    | Value Object    | Não muda e sempre pertence a um único paciente. |
-| Endereço               | Value Object    | Se o paciente mudar de endereço, um novo objeto será criado. |
-| Consulta (Agregado)    | Aggregate Root  | Controla a relação entre Paciente, Médico e Data da Consulta. |
+| **Player**               | Entidade        | Possui identidade única e guarda as informações variáveis dos usuários. |
+| **Local**                 | Entidade        | Pode personalizar seu conteúdo que será disponibilizado para o agendamento de partidas |
+| **Esporte**                 | Entidade        | Objetos importantes para a estratégia do Negócio.  |
+| **Modalidade do Esporte**                 | Value Object        | Relacionado sempre a um esporte, não podendo ser editado, somente selecionado na criaçãoi de partidas.  |
+| **Email**                    | Value Object    | Não muda e sempre pertence a um único player. |
+| **Horário**                    | Value Object    | Não pode conflitar horário (data e hora) para o mesmo local. |
+| **Endereço**               | Value Object    | Se o paciente mudar de endereço, um novo objeto será criado. |
+| **Time**    | Aggregate | Utilizado para agregar players para organização de partidas. |
+| **Players**    | Aggregate | Utilizado para agregar os players cadastrados em uma partida e o status referente à inscrição. |
+| **Partida (Agregado)**    | Aggregate Root  | Relaciona os objetos principais para o domínio do app. (Players, Locais, Times e Esportes). |
+
 
 
 📌 **Ferramentas para Criar o Diagrama:**  
