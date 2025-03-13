@@ -1,4 +1,4 @@
-
+from esporte_players import EsportesPlayers
 
 class ModalidadeEsporte:
     def __init__(self, esporte, nome, max_players, min_players, qtd_times):
@@ -20,5 +20,9 @@ class Esporte:
 
     def getModalidades(self):
         return ModalidadeEsporte.getByEsporte(self)
+    
+    def addPreferencia(self, player):
+        EsportesPlayers(player, self)
+
 
 
