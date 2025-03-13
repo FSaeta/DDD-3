@@ -1,4 +1,5 @@
 import re
+import requests
 
 
 class CepInvalidoException(Exception):
@@ -11,12 +12,13 @@ class CepInvalidoException(Exception):
 
 
 class Endereco:
-    def __init__(self, cep, rua, numero, complemento, pais, estado):
+    def __init__(self, cep, rua, numero, complemento, pais, cidade, estado):
         self.rua = rua
         self.zipCode = self.validar_e_corrigir_cep(cep)
         self.numero = numero
         self.complemento = complemento
         self.pais = pais
+        self.cidade = cidade
         self.estado = estado
 
     def validar_e_corrigir_cep(self, cep):
@@ -34,3 +36,13 @@ class Endereco:
 
         return cep_formatado
     
+    def getCoordenadas(self):
+        endereco = f"{self.rua}, {self.numero}, {self.bairro}, {self.cidade}, {self.estado}, {self.cep}, {self.pais}"
+        # url = f"https://nominatim.openstreetmap.org/search?q={endereco}&format=json"
+        url = f"https://example-coordinates.getter.com/get?addrs={endereco}&format=json"
+        response = requests.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            if data:
+                return data[0]['lat'], data[0]['lon']
+        return None, None
