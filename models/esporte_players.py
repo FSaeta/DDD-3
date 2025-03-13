@@ -3,5 +3,8 @@ class EsportesPlayers:
         self.player = player
         self.esporte = esporte
 
-    def getEsportesPreferidos(self):
-        return self.esporte.all().filter(player=self.player)
+    def getByPlayer(self, player):
+        return self.objects.all(player)
+    
+    def getByEsporte(self, esporte):
+        return self.objects.all(esporte)
