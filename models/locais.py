@@ -7,3 +7,12 @@ class Local:
         self.esportes = esportes
         self.manager = manager
 
+        self.ativo = True
+
+    def toggleAtivo(self, manager, value=None):
+        if manager == self.manager:
+            if value is None:
+                self.ativo = not(self.ativo)
+            else:
+                self.ativo = value
+
