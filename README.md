@@ -33,7 +33,7 @@
 
 ## 3. Implemente um diagrama mostrando as relações entre os elementos:
 
-![Context Map](/DDD-3/classes-uml.jpg)
+![Context Map](/classes-uml.jpg)
 
 
 ## 4. Crie a interface do repositório para persistência do agregado:
